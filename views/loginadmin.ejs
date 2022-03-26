@@ -1,0 +1,213 @@
+<!-- Ini Page LoginAdmin.ejs -->
+<html>
+    <head>
+        <title>Adminisrator | Login</title>
+        <!-- <link rel="stylesheet" href="/public/css/templateloginadmin.css"/> -->
+        <style type="text/css">
+                body{
+                    background-color:grey;
+                }
+
+                .container-top{
+                    background-color:lavender;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 50px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                }
+
+                .container-header{
+                    background-color:bisque;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 150px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                }
+
+                .logo {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .logo img{
+                    align-self: center;  
+                    padding: 5px;
+                }
+
+                .input{
+                    padding: 5px 0;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .button-full{
+                    width: 100%;
+                    /* background-color: yellowgreen; */
+                    color: black;
+                    font-size: 14px;
+                }
+
+                .container-content{
+                    background-color:cornsilk;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 150px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                .container-footer{
+                    background-color:bisque;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 40px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                .borderbeforebottom{
+                    background-color:coral;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 20px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                .container-bottom{
+                    background-color:darkgray;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 10px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                .headertabelbottom{
+                    text-align: right;
+                }
+
+                .bodytabelbottom{
+                    align-self: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="container-top"></div>
+        <div class="container-header">
+            <div class="logo">
+            <img alt="logo sekolah" width="100px" src="/views/logo-smk.jpg"/>
+                <h4><label>LOGIN ADMIN</label></h4>
+                <span id="tglwaktu"></span>
+                <script>
+                      var waktu = new Date();
+                          var tahun = waktu.getFullYear();
+                          var bulan = waktu.getMonth();
+                          var tgl = waktu.getDate();
+                          var hari = waktu.getDay();
+                          var jam = waktu.getHours();
+                          var menit = waktu.getMinutes();
+                          var sekon = waktu.getSeconds();
+                          switch(bulan){
+                                  case 0:
+                                      bulan="JANUARI";
+                                      break;
+                                  case 1:
+                                      bulan="FEBRUARI";
+                                      break;
+                                  case 2:
+                                      bulan="MARET";
+                                      break;
+                                  case 3:
+                                      bulan="APRIL";
+                                      break;
+                                  case 4:
+                                      bulan="MEI";
+                                      break;
+                                  case 5:
+                                      bulan="JUNI";
+                                      break;
+                                  case 6:
+                                      bulan="JULI";
+                                      break;
+                                  case 7:
+                                      bulan="AGUSTUS";
+                                      break;
+                                  case 8:
+                                      bulan="SEPTEMBER";
+                                      break;
+                                  case 9:
+                                      bulan="OKTOBER";
+                                      break;
+                                  case 10:
+                                      bulan="NOPEMBER";
+                                      break;
+                                  case 11:
+                                      bulan="DESEMBER";
+                                      break;
+                                  default: 
+                                 }
+  
+                                 switch(hari){
+                                    case 0:
+                                      hari="AHAD";
+                                      break;
+                                    case 1:
+                                      hari="SENIN";
+                                      break;
+                                  case 2:
+                                      hari="SELASA";
+                                      break;
+                                  case 3:
+                                      hari="RABU";
+                                      break;
+                                  case 4:
+                                      hari="KAMIS";
+                                      break;
+                                  case 5:
+                                      hari="JUMAT";
+                                      break;
+                                  case 6:
+                                      hari="SABTU";
+                                      break;
+                                  default:   
+                                  }
+  
+                                  jam = ("0" + jam).slice(-2);
+                                  menit = ("0" + menit).slice(-2);
+                                  sekon = ("0" + sekon).slice(-2);
+  
+                                  dwaktu= " "+hari+", "+tgl+" "+bulan+" "+tahun+" "+jam+":"+menit+":"+sekon+" WIB";
+  
+                              document.getElementById("tglwaktu").innerHTML = dwaktu.toLocaleString();
+                </script>
+
+            </div>
+            <form action="/admin/login" method="POST">
+                
+                <div class="input">
+                    <label>Username</label>
+                    <input name="idpegawai" value="" type="text" placeholder="ID Pegawai" required/>
+                </div>
+                <div class="input">
+                        <label>Password</label>
+                        <input name="sandi" value="" type="password" placeholder="Password" required/>
+                </div>
+                <button class="button-full" type="submit">LOGIN</button>
+            </form>
+        </div>
+        <div class="container-content"></div>
+        <div class="container-footer"></div>
+        <div class="borderbeforebottom"></div>
+        <div class="container-bottom"></div>
+    </body>
+</html>

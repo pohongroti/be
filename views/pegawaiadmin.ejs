@@ -1,0 +1,307 @@
+<!-- Ini Page PegawaiAdmin.ejs -->
+<html>  
+    <head>
+        <title>Adminisrator | Pegawai</title>
+        <!-- <link rel="stylesheet" href="./css/templatepegawaiadmin.css"/> -->
+        <style type="text/css">
+
+            body{
+                background-color:grey;
+            }
+
+            .container-top{
+                background-color:lavender;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 60px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+            }
+
+            .logo {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .logo img{
+                align-self: center;  
+                padding: 1px;
+            }
+
+            .container-header{
+                background-color:cornsilk;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 25px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+
+
+            .list-menu-right{
+                text-align: right;
+            }
+            .list-menu-left{
+                text-align: left;
+            }
+
+            .container-content{
+                background-color:cornsilk;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 370px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+            .list-menu-center{
+                background-color:bisque;
+                margin:0 auto;
+                width: 400px; /*ini lebar kanan-kiri*/
+                height: 15px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .bodytabelcontent{
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                
+            }
+
+            .sublist-menu-center{
+                background-color:bisque;
+                margin:0 auto;
+                width: 450px; /*ini lebar kanan-kiri*/
+                height: 15px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .form-content{
+                background-color:bisque;
+                margin:0 auto;
+                width: 250px; /*ini lebar kanan-kiri*/
+                height: 240px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 5px;
+                text-align: center;
+                align-self: center;
+                padding: 5px 0;    
+                flex-direction: column;
+            }
+
+            .container-footer{
+                background-color:bisque;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 7px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .borderbeforebottom{
+                /* background-color:coral; */
+                background-color:grey;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 1px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .container-bottom{
+                /* background-color:darkgray; */
+                background-color:grey;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 1px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container-top">
+            <div class="logo">
+                <img alt="logo sekolah" width="50px" src="./gambar/logo-smk.jpg"/>
+                <label>MENU ADMIN</label>
+                <br>
+            </div>
+        </div>
+        <div class="container-header">
+            <div class="list-menu-left">
+                <label>ANDA LOGIN SEBAGAI ID PEGAWAI <b><%= idpegawai %></b> </label>
+            <div class="list-menu-right">
+                <span id="tglwaktu"></span>
+                <script>
+                      var waktu = new Date();
+                          var tahun = waktu.getFullYear();
+                          var bulan = waktu.getMonth();
+                          var tgl = waktu.getDate();
+                          var hari = waktu.getDay();
+                          var jam = waktu.getHours();
+                          var menit = waktu.getMinutes();
+                          var sekon = waktu.getSeconds();
+                          switch(bulan){
+                                  case 0:
+                                      bulan="JANUARI";
+                                      break;
+                                  case 1:
+                                      bulan="FEBRUARI";
+                                      break;
+                                  case 2:
+                                      bulan="MARET";
+                                      break;
+                                  case 3:
+                                      bulan="APRIL";
+                                      break;
+                                  case 4:
+                                      bulan="MEI";
+                                      break;
+                                  case 5:
+                                      bulan="JUNI";
+                                      break;
+                                  case 6:
+                                      bulan="JULI";
+                                      break;
+                                  case 7:
+                                      bulan="AGUSTUS";
+                                      break;
+                                  case 8:
+                                      bulan="SEPTEMBER";
+                                      break;
+                                  case 9:
+                                      bulan="OKTOBER";
+                                      break;
+                                  case 10:
+                                      bulan="NOPEMBER";
+                                      break;
+                                  case 11:
+                                      bulan="DESEMBER";
+                                      break;
+                                  default: 
+                                 }
+  
+                                 switch(hari){
+                                  case 0:
+                                      hari="AHAD";
+                                      break;
+                                  case 1:
+                                      hari="SENIN";
+                                      break;
+                                  case 2:
+                                      hari="SELASA";
+                                      break;
+                                  case 3:
+                                      hari="RABU";
+                                      break;
+                                  case 4:
+                                      hari="KAMIS";
+                                      break;
+                                  case 5:
+                                      hari="JUMAT";
+                                      break;
+                                  case 6:
+                                      hari="SABTU";
+                                      break;
+                                  default:   
+                                  }
+  
+                                  jam = ("0" + jam).slice(-2);
+                                  menit = ("0" + menit).slice(-2);
+                                  sekon = ("0" + sekon).slice(-2);
+  
+                                  dwaktu= "TIME SERVER : "+hari+", "+tgl+" "+bulan+" "+tahun+" "+jam+":"+menit+":"+sekon+" WIB";
+  
+                              document.getElementById("tglwaktu").innerHTML = dwaktu.toLocaleString();
+                </script>
+            </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="list-menu-center">
+                <label>||</label>
+                <a href="/admin/beranda"><label>BERANDA</label></a>
+                <label>||</label>
+                <a href="/admin/pegawai"><label>PEGAWAI</label></a>
+                <label>||</label>
+                <a href="/admin/laporan"><label>LAPORAN</label></a>
+                <label>||</label>
+                <a href="/admin/pengaturan"><label>PENGATURAN</label></a>
+                <label>||</label>   
+            </div>
+            <div class="bodytabelcontent">
+                <h3><label>PENGATURAN PEGAWAI SISTEM PRESENSI PEGAWAI</label></h3>
+                <div class="form-content">
+                    <form action="<%= pegawaiDataDetail.idpegawai ? '/admin/editpegawai' : '/admin/addpegawai' %>" method="POST">
+                        <h4><label>DATA PEGAWAI</label></h4>
+                        <label>ID PEGAWAI </label>
+                        <input name="idpegawai" value="<%= pegawaiDataDetail.idpegawai  %>" type="text" placeholder="ID Pegawai" required/>
+                        <label>USERNAME PEGAWAI</label>
+                        <input name="namapegawai" value="<%= pegawaiDataDetail.namapegawai  %>" type="text" placeholder="Nama Pegawai" required/>
+                        <label>JABATAN PEGAWAI</label>
+                        <input name="jabatanpegawai" value="<%= pegawaiDataDetail.jabatanpegawai  %>" type="text" placeholder="Jabatan Pegawai" required/>
+                        <label>PASSWORD PEGAWAI</label>
+                        <input name="sandi" value="<%= pegawaiDataDetail.sandi  %>" type="text" placeholder="Password Pegawai" required/>
+                        <button class="button-full" type="submit">SIMPAN</button>
+                    </form>    
+                </div>
+        
+            </div>
+        </div>
+        <div class="container-footer">
+        
+            <b><label>DATA PEGAWAI</label></b>
+            <table border="3" bgcolor="white">
+                <tr align="center">
+                    <th>ID PEGAWAI</th>
+                    <th>USERNAME PEGAWAI</th>
+                    <th>JABATAN PEGAWAI</th>
+                    <th>PASSWORD PEGAWAI</th>
+                    <th>EDIT</th>
+                    <th>HAPUS</th>
+                </tr>
+                <% if(pegawaiData.length!=0) { 
+                    var i = 1;
+                    pegawaiData.forEach(function(data){
+                %>
+                <tr align="center">
+                    <td><%= data.idpegawai %></td>
+                    <td><%= data.namapegawai %></td>
+                    <td><%= data.jabatanpegawai %></td>
+                    <td><%= data.sandi %></td>
+                    <td> <a href="/admin/pegawai/<%= data.idpegawai %>"> EDIT </a></td>
+                    <td> <a onclick="hapusPegawai('<%= data.idpegawai %>')" href="#"> HAPUS </a></td>
+                </tr>
+                <% i++; })} %>
+            </table>
+        
+        </div>
+        <div class="borderbeforebottom"></div>
+        <div class="container-bottom"></div>
+    </body>
+    <script>
+        function hapusPegawai(idpegawai) {
+            console.log('idpegawai', idpegawai);
+            const response = confirm(`Apakah anda yakin menghapus pegawai dengan idpegawai ${idpegawai}`);
+            if(response == true) {
+                window.location.href = `/admin/deletepegawai/${idpegawai}`;
+            }
+
+        }
+    </script>
+</html>

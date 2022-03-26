@@ -1,0 +1,288 @@
+<!-- Ini Page LaporanAdmin.ejs -->
+<html>
+    <head>
+        <title>Adminisrator | Laporan</title>
+        <!-- <link rel="stylesheet" href="./css/templatelaporanadmin.css"/> -->
+        <style type="text/css">
+
+                body{
+                    background-color:grey;
+                }
+
+                .container-top{
+                    background-color:lavender;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 60px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                }
+
+                .logo {
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .logo img{
+                    align-self: center;  
+                    padding: 1px;
+                }
+
+                .container-header{
+                    background-color:cornsilk;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 25px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+
+                .list-menu-right{
+                    text-align: right;
+                }
+                .list-menu-left{
+                    text-align: left;
+                }
+
+                .container-content{
+                    background-color:cornsilk;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 130px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+                .list-menu-center{
+                    background-color:bisque;
+                    margin:0 auto;
+                    width: 400px; /*ini lebar kanan-kiri*/
+                    height: 15px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 5px;
+                    text-align: center;
+                }
+
+                .bodytabelcontent{
+                    align-self: center;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .form-content{
+                    background-color:bisque;
+                    margin:0 auto;
+                    width: 800px; /*ini lebar kanan-kiri*/
+                    height: 30px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 5px;
+                    text-align: center;
+                }
+
+                .container-footer{
+                    background-color:bisque;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 1px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                .borderbeforebottom{
+                    /* background-color:coral; */
+                    background-color:coral;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 1px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+
+                .container-bottom{
+                    /* background-color:darkgray; */
+                    background-color:grey;
+                    margin:0 auto;
+                    width: 1300px; /*ini lebar kanan-kiri*/
+                    height: 1px; /*ini tinggi atas-bawah*/
+                    border:1px black;
+                    padding: 10px;
+                    text-align: center;
+                }
+    
+        </style>
+    </head>
+    <body>
+        <div class="container-top">
+            <div class="logo">
+                <img alt="logo sekolah" width="50px" src="./gambar/logo-smk.jpg"/>
+                <label>MENU ADMIN</label>
+                <br>
+            </div>
+        </div>
+        <div class="container-header">
+            <div class="list-menu-left">
+                <label>ANDA LOGIN SEBAGAI ID PEGAWAI <b><%= idpegawai %></b> </label>
+            <div class="list-menu-right">
+                <span id="tglwaktu"></span>
+              <script>
+                    var waktu = new Date();
+                        var tahun = waktu.getFullYear();
+                        var bulan = waktu.getMonth();
+                        var tgl = waktu.getDate();
+                        var hari = waktu.getDay();
+                        var jam = waktu.getHours();
+                        var menit = waktu.getMinutes();
+                        var sekon = waktu.getSeconds();
+                        switch(bulan){
+                                case 0:
+                                    bulan="JANUARI";    
+                                    break;
+                                case 1:
+                                    bulan="FEBRUARI";
+                                    break;
+                                case 2:
+                                    bulan="MARET";
+                                    break;
+                                case 3:
+                                    bulan="APRIL";
+                                    break;
+                                case 4:
+                                    bulan="MEI";
+                                    break;
+                                case 5:
+                                    bulan="JUNI";
+                                    break;
+                                case 6:
+                                    bulan="JULI";
+                                    break;
+                                case 7:
+                                    bulan="AGUSTUS";
+                                    break;
+                                case 8:
+                                    bulan="SEPTEMBER";
+                                    break;
+                                case 9:
+                                    bulan="OKTOBER";
+                                    break;
+                                case 10:
+                                    bulan="NOPEMBER";
+                                    break;
+                                case 11:
+                                    bulan="DESEMBER";
+                                    break;
+                                default: 
+                               }
+
+                            switch(hari){
+                                case 0:
+                                    hari="AHAD";
+                                    break;
+                                case 1:
+                                    hari="SENIN";
+                                    break;
+                                case 2:
+                                    hari="SELASA";
+                                    break;
+                                case 3:
+                                    hari="RABU";
+                                    break;
+                                case 4:
+                                    hari="KAMIS";
+                                    break;
+                                case 5:
+                                    hari="JUMAT";
+                                    break;
+                                case 6:
+                                    hari="SABTU";
+                                    break;
+                                default:   
+                                }
+
+                                jam = ("0" + jam).slice(-2);
+                                menit = ("0" + menit).slice(-2);
+                                sekon = ("0" + sekon).slice(-2);
+
+                                dwaktu= "TIME SERVER : "+hari+", "+tgl+" "+bulan+" "+tahun+" "+jam+":"+menit+":"+sekon+" WIB";
+
+                            document.getElementById("tglwaktu").innerHTML = dwaktu.toLocaleString();
+              </script>
+            </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="list-menu-center">
+                <label>||</label>
+                <a href="/admin/beranda"><label>BERANDA</label></a>
+                <label>||</label>
+                <a href="/admin/pegawai"><label>PEGAWAI</label></a>
+                <label>||</label>
+                <a href="/admin/laporan"><label>LAPORAN</label></a>
+                <label>||</label>
+                <a href="/admin/pengaturan"><label>PENGATURAN</label></a>
+                <label>||</label>    
+            </div>
+            <div class="bodytabelcontent">
+                <h3><label>LAPORAN SISTEM PRESENSI PEGAWAI</label></h3>
+           <div class="form-content">
+                    <form action="/searchlaporan" method="POST">
+                        <input name="idpegawai" value="" type="text" placeholder="ID Pegawai" required/>
+                        <input name="tgl" value="" type="date" required/>
+                        <button class="button-full" type="submit">CARI</button>
+                     </form>    
+                </div>
+            <h3><label>DATA HASIL PRESENSI PEGAWAI</label></h3>
+                <table border="3" bgcolor="white">
+                    <tr align="center">
+                        <th>ID PEGAWAI</th>
+                        <th>NAMA PEGAWAI</th>
+                        <th>JABATAN PEGAWAI</th>
+                        <th>ID PRESENSI</th>
+                        <th>TANGGAL/BULAN/TAHUN</th>
+                        <th>KOORDINAT LONGITUDE</th>
+                        <th>KOORDINAT LATITUDE</th>
+                        <th>STATUS</th>
+                        <th>SISTEM KERJA</th>
+                        <th>FILE FOTO</th>
+                        <th>HAPUS</th>
+                    </tr>
+                    <% if(laporanData.length!=0) { 
+                        var i = 1;
+                        laporanData.forEach(function(data){
+                    %>
+                    <tr align="center">
+                        <td><%= data.idpegawai %></td>
+                        <td><%= data.namapegawai %></td>
+                        <td><%= data.jabatanpegawai %></td>
+                        <td><%= data.idpresensi %></td>
+                        <td><%= data.tglwaktu %></td>
+                        <td><%= data.longitude %></td>
+                        <td><%= data.latitude %></td>
+                        <td><%= data.jenis_presensi %></td>
+                        <td><%= data.sistem_kerja %></td>
+                        <td><%= data.foto %></td>
+                        <td><a onclick="hapusLaporan('<%= data.idpresensi %>')" href="#"> HAPUS </a></td>
+                    </tr>
+                    <% i++; })} %>
+                </table>
+            </div>
+        </div>
+        <div class="container-footer"></div>
+        <div class="borderbeforebottom"></div>
+        <div class="container-bottom"></div>
+    </body>
+    <script>
+        function hapusLaporan(idpresensi) {
+            console.log('idpresensi', idpresensi);
+            const response = confirm(`Apakah anda yakin menghapus laporan dengan idpresensi ${idpresensi}`);
+            if(response == true) {
+                window.location.href = `/admin/deletelaporan/${idpresensi}`;
+            }
+
+        }
+    </script>
+</html>

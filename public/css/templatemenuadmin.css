@@ -1,0 +1,116 @@
+body{
+    background-color:grey;
+}
+
+
+.container-top{
+    background-color:lavender;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 60px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img{
+    align-self: center;  
+    padding: 1px;
+}
+
+.container-header{
+    background-color:cornsilk;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 25px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.list-menu-right{
+/*     background-color:whitesmoke;
+    margin:0 auto;
+    width: 1300px; /* ini lebar kanan-kiri
+    height:6px; /* ini tinggi atas-bawah
+    border:1px black;
+    padding: 10px;  */
+    text-align: right;
+    
+}
+.list-menu-left{
+/*     background-color:aqua;
+    margin:0 auto;
+    width: 1300px; ini lebar kanan-kiri
+    height:6px; ini tinggi atas-bawah
+    border:1px black;
+    padding: 10px; */
+    text-align: left;
+}
+
+.container-content{
+    background-color:cornsilk;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 370px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+}
+.list-menu-center{
+    background-color:bisque;
+    margin:0 auto;
+    width: 400px; /*ini lebar kanan-kiri*/
+    height: 15px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 5px;
+    text-align: center;
+}
+
+.form-content{
+    background-color:bisque;
+    margin:0 auto;
+    width: 1000px; /*ini lebar kanan-kiri*/
+    height: 20px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 5px;
+    text-align: center;
+    align-self: center;
+    padding: 5px 0;    
+    flex-direction: column;
+}
+
+.container-footer{
+    background-color:bisque;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 1px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
+
+.borderbeforebottom{
+    background-color:coral;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 1px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-bottom{
+    background-color:darkgray;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 1px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}

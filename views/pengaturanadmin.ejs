@@ -1,0 +1,312 @@
+<!-- Ini Page PengaturanAdmin.ejs -->
+<html>
+    <head>
+        <title>Adminisrator | Pengaturan</title>
+        <!-- <link rel="stylesheet" href="./css/templatepengaturanadmin.css"/> -->
+        <style type="text/css">
+
+            body{
+                background-color:grey;
+            }
+
+            .container-top{
+                background-color:lavender;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 60px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+            }
+
+            .logo {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .logo img{
+                align-self: center;  
+                padding: 1px;
+            }
+
+            .container-header{
+                background-color:cornsilk;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 25px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+
+
+            .list-menu-right{
+                text-align: right;
+            }
+            .list-menu-left{
+                text-align: left;
+            }
+
+            .container-content{
+                background-color:cornsilk;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 370px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+            .list-menu-center{
+                background-color:bisque;
+                margin:0 auto;
+                width: 400px; /*ini lebar kanan-kiri*/
+                height: 15px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .bodytabelcontent{
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                
+            }
+
+            .sublist-menu-center{
+                background-color:bisque;
+                margin:0 auto;
+                width: 400px; /*ini lebar kanan-kiri*/
+                height: 15px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 5px;
+                text-align: center;
+            }
+
+            .form-content{
+                background-color:bisque;
+                margin:0 auto;
+                width: 250px; /*ini lebar kanan-kiri*/
+                height: 280px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 5px;
+                text-align: center;
+                align-self: center;
+                padding: 5px 0;    
+                flex-direction: column;
+            }
+
+            .container-footer{
+                background-color:bisque;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 7px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .borderbeforebottom{
+                /* background-color:coral; */
+                background-color:grey;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 1px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .container-bottom{
+                /* background-color:darkgray; */
+                background-color:grey;
+                margin:0 auto;
+                width: 1300px; /*ini lebar kanan-kiri*/
+                height: 1px; /*ini tinggi atas-bawah*/
+                border:1px black;
+                padding: 10px;
+                text-align: center;
+            }
+
+    
+        </style>
+    </head>
+    <body>
+        <div class="container-top">
+            <div class="logo">
+                <img alt="logo sekolah" width="50px" src="./gambar/logo-smk.jpg"/>
+                <label>MENU ADMIN</label>
+                <br>
+            </div>
+        </div>
+        <div class="container-header">
+            <div class="list-menu-left">
+                <label>ANDA LOGIN SEBAGAI ID PEGAWAI <b><%= idpegawai %></b> </label>
+            <div class="list-menu-right">
+                <span id="tglwaktu"></span>
+                <script>
+                      var waktu = new Date();
+                          var tahun = waktu.getFullYear();
+                          var bulan = waktu.getMonth();
+                          var tgl = waktu.getDate();
+                          var hari = waktu.getDay();
+                          var jam = waktu.getHours();
+                          var menit = waktu.getMinutes();
+                          var sekon = waktu.getSeconds();
+                          switch(bulan){
+                                  case 0:
+                                    bulan="JANUARI";
+                                    break;
+                                  case 1:
+                                      bulan="FEBRUARI";
+                                      break;
+                                  case 2:
+                                      bulan="MARET";
+                                      break;
+                                  case 3:
+                                      bulan="APRIL";
+                                      break;
+                                  case 4:
+                                      bulan="MEI";
+                                      break;
+                                  case 5:
+                                      bulan="JUNI";
+                                      break;
+                                  case 6:
+                                      bulan="JULI";
+                                      break;
+                                  case 7:
+                                      bulan="AGUSTUS";
+                                      break;
+                                  case 8:
+                                      bulan="SEPTEMBER";
+                                      break;
+                                  case 9:
+                                      bulan="OKTOBER";
+                                      break;
+                                  case 10:
+                                      bulan="NOPEMBER";
+                                      break;
+                                  case 11:
+                                      bulan="DESEMBER";
+                                      break;
+                                  default: 
+                                 }
+  
+                                 switch(hari){
+                                    case 0:
+                                      hari="AHAD";
+                                      break;
+                                  case 1:
+                                      hari="SENIN";
+                                      break;
+                                  case 2:
+                                      hari="SELASA";
+                                      break;
+                                  case 3:
+                                      hari="RABU";
+                                      break;
+                                  case 4:
+                                      hari="KAMIS";
+                                      break;
+                                  case 5:
+                                      hari="JUMAT";
+                                      break;
+                                  case 6:
+                                      hari="SABTU";
+                                      break;
+                                  default:   
+                                  }
+  
+                                  jam = ("0" + jam).slice(-2);
+                                  menit = ("0" + menit).slice(-2);
+                                  sekon = ("0" + sekon).slice(-2);
+  
+                                  dwaktu= "TIME SERVER : "+hari+", "+tgl+" "+bulan+" "+tahun+" "+jam+":"+menit+":"+sekon+" WIB";
+  
+                              document.getElementById("tglwaktu").innerHTML = dwaktu.toLocaleString();
+                </script>
+            </div>
+            </div>
+        </div>
+        <div class="container-content">
+            <div class="list-menu-center">
+                <label>||</label>
+                <a href="/admin/beranda"><label>BERANDA</label></a>
+                <label>||</label>
+                <a href="/admin/pegawai"><label>PEGAWAI</label></a>
+                <label>||</label>
+                <a href="/admin/laporan"><label>LAPORAN</label></a>
+                <label>||</label>
+                <a href="/admin/pengaturan"><label>PENGATURAN</label></a>
+                <label>||</label>   
+            </div>
+            <div class="bodytabelcontent">
+                <h3><label>PENGATURAN SISTEM PRESENSI PEGAWAI</label></h3>
+                <div class="form-content">
+                    <form action="/admin/editpengaturan" method="POST">
+                        <h4><label>DATA PENGATURAN</label></h4>
+                        <label>ID PENGATURAN</label>
+                        <input name="idpengaturan" value="<%= pengaturanDataDetail.idpengaturan  %>" type="text" placeholder="ID Pengaturan" readonly required/>
+                        <br><label>NAMA LOKASI</label><br>
+                        <input name="namalokasi" value="<%= pengaturanDataDetail.namalokasi  %>" type="text" placeholder="Nama Lokasi" required/>
+                        <label>LONGITUDE-[LINTANG]</label>
+                        <input name="longitude" value="<%= pengaturanDataDetail.longitude  %>" type="text" placeholder="Titik Longitude" required/>
+                        <label>LATITUDE-[BUJUR]</label>
+                        <input name="latitude" value="<%= pengaturanDataDetail.latitude  %>" type="text" placeholder="Titik Latitude" required/> <br>
+                        <label>JARAK PRESENSI {METER}</label>
+                        <input name="jarakpresensi" value="<%= pengaturanDataDetail.jarak_presensi  %>" type="text" placeholder="Jarak Titik Presensi" required/>
+                        <button class="button-full" type="submit">SIMPAN</button>
+
+                    </form>    
+                </div>
+        
+            </div>
+        </div>
+        <div class="container-footer">
+
+            <b><label>DATA PENGATURAN LOKASI</label></b>
+            <table border="3" bgcolor="white">
+                <tr align="center">
+                    <th>ID PENGATURAN</th>
+                    <th>NAMA LOKASI</th>
+                    <th>LONGITUDE LOKASI</th>
+                    <th>LATITUDE LOKASI</th>
+                    <th>JARAK LOKASI {M}</th>
+                    <th>EDIT</th>
+                </tr>
+                <% if(pengaturanData.length!=0) { 
+                    var i = 1;
+                    pengaturanData.forEach(function(data){
+                %>
+                <tr align="center">
+                    <td><%= data.idpengaturan %></td>
+                    <td><%= data.namalokasi %></td>
+                    <td><%= data.longitude %></td>
+                    <td><%= data.latitude %></td>
+                    <td><%= data.jarak_presensi %></td>
+                    <td> <a href="/admin/pengaturan/<%= data.idpengaturan %>"> EDIT </a></td>
+                    <!-- <td> <a onclick="hapusPengaturan('<%= data.idpengaturan %>')" href="#"> HAPUS </a></td>
+                --> </tr>
+                <% i++; })} %>
+            </table>
+
+        </div>
+        <div class="borderbeforebottom"></div>
+        <div class="container-bottom"></div>
+    </body>
+    <script>
+        function hapusPengaturan(idpengaturan) {
+            console.log('idpengaturan', idpengaturan);
+            const response = confirm(`Apakah anda yakin menghapus pengaturan dengan idlpengaturan ${idpengaturan}`);
+            if(response == true) {
+                window.location.href = `/admin/deletepengaturan/${idpengaturan}`;
+            }
+
+        }
+    </script>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "admin",
+  "version": "1.0.0",
+  "description": "BE SISTEM PRESENSI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "master-soft",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7",
+    "pm2": "^5.1.2"
+  }
+}

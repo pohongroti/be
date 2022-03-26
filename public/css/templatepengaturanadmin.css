@@ -1,0 +1,129 @@
+/* Ini Page Tata Rias Halaman/CSS TemplatePengaturanAdmin.css */
+
+/* Ini untuk Form Pengaturan Admin  */
+body{
+    background-color:grey;
+}
+
+.container-top{
+    background-color:lavender;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 60px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img{
+    align-self: center;  
+    padding: 1px;
+}
+
+.container-header{
+    background-color:cornsilk;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 25px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.list-menu-right{
+    text-align: right;
+}
+.list-menu-left{
+    text-align: left;
+}
+
+.container-content{
+    background-color:cornsilk;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 370px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
+.list-menu-center{
+    background-color:bisque;
+    margin:0 auto;
+    width: 400px; /*ini lebar kanan-kiri*/
+    height: 15px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 5px;
+    text-align: center;
+}
+
+.bodytabelcontent{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.sublist-menu-center{
+    background-color:bisque;
+    margin:0 auto;
+    width: 400px; /*ini lebar kanan-kiri*/
+    height: 15px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 5px;
+    text-align: center;
+}
+
+.form-content{
+    background-color:bisque;
+    margin:0 auto;
+    width: 250px; /*ini lebar kanan-kiri*/
+    height: 280px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 5px;
+    text-align: center;
+    align-self: center;
+    padding: 5px 0;    
+    flex-direction: column;
+}
+
+.container-footer{
+    background-color:bisque;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 7px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.borderbeforebottom{
+    /* background-color:coral; */
+    background-color:grey;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 1px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-bottom{
+    /* background-color:darkgray; */
+    background-color:grey;
+    margin:0 auto;
+    width: 1300px; /*ini lebar kanan-kiri*/
+    height: 1px; /*ini tinggi atas-bawah*/
+    border:1px black;
+    padding: 10px;
+    text-align: center;
+}
